@@ -8,11 +8,18 @@ function drawBar(data){
   .attr("width", svgWidth)
   .attr("height", svgHeight);
 
+
+  svg.append("text").attr("id", "charttitle")
+   .attr("x",  svgWidth/3.9 )
+   .attr("y", 25)
+   .style("text-anchor", "middle")
+   .text("Number of people flying out of sfo");
+
   let margin = {
   top:    15,
-  right:  35, // leave space for y-axis
+  right:  10,
   bottom: 30, // leave space for x-axis
-  left:   10
+  left:   60 // leave space for y-axis
 };
 
 // now we can calculate how much space we have to plot
@@ -43,7 +50,7 @@ plot.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
   let xAxis = d3.axisBottom(monthScale);
-  let yAxis = d3.axisRight(yScale2);
+  let yAxis = d3.axisLeft(yScale2);
 
   let xGroup = plot.append("g").attr("id", "x-axis");
   xGroup.call(xAxis);
@@ -55,49 +62,53 @@ plot.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   let yGroup = plot.append("g").attr("id", "y-axis");
   yGroup.call(yAxis);
-  yGroup.attr("transform", "translate(" + plotWidth + ",0)");
+  // yGroup.attr("transform", "translate(0"+ "," + plotWidth + ")");
 
-  // let pairs = Array.from(map.entries());
-  //
-  // let bars = plot.selectAll("rect")
-  //  .data(pairs, function(d) { return d[0]; });
-  //
-  //
-  //  bars.enter().append("rect")
-  // // we will style using css
-  // .attr("class", "bar")
-  // // the width of our bar is determined by our band scale
-  // .attr("width", barWidth - barPadding)
-  // // we must now map our letter to an x pixel position
-  // // note the use of arrow functions here
-  // // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Arrow_functions
-  // .attr("x", d => monthScale(d[0]))
-  // // and do something similar for our y pixel position
-  // .attr("y", d => yScale(d[1]))
-  // // here it gets weird again, how do we set the bar height?
-  // .attr("height", d => plotHeight - yScale(d[1]))
-  // .each(function(d, i, nodes) {
-  //   console.log("Added bar for:", d[0]);
-  // });
+  let pairs = Array.from(map.entries());
+  console.log(pairs);
+
+  let bars = plot.selectAll("rect")
+   .data(pairs, function(d) { return d[1]; });
 
 
-
-
-  var barChart = plot.selectAll("rect")
-    .data(dataset)
-    .enter()
-    .append("rect")
-    .attr("y", function(d){
-      return plotHeight - yScale(d);
-    })
-    .attr("height", function(d){
-      return yScale(d);
-    })
-    .attr("width", barWidth - barPadding)
-    .attr("transform", function(d, i){
-      var translate = [barWidth * i, 0];
-      return "translate("+translate+")";
+   bars.enter().append("rect")
+  // we will style using css
+  .attr("class", "bar")
+  // the width of our bar is determined by our band scale
+  .attr("width", barWidth - barPadding)
+  // we must now map our letter to an x pixel position
+  // note the use of arrow functions here
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Arrow_functions
+  .attr("x", d => monthScale(d[0]))
+  // and do something similar for our y pixel position
+  .attr("y", d => yScale2(d[1]))
+  // here it gets weird again, how do we set the bar height?
+  .attr("height", d => plotHeight - yScale2(d[1]))
+  .attr("transform", function(d, i){
+    var translate = [(barWidth * (i) + 5), 0];
+    return "translate("+translate+")";})
+  .each(function(d, i, nodes) {
+    console.log("Added bar for:", d[0]);
   });
+
+
+
+
+//   var barChart = plot.selectAll("rect")
+//     .data(dataset)
+//     .enter()
+//     .append("rect")
+//     .attr("y", function(d){
+//       return plotHeight - yScale(d);
+//     })
+//     .attr("height", function(d){
+//       return yScale(d);
+//     })
+//     .attr("width", barWidth - barPadding )
+//     .attr("transform", function(d, i){
+//       var translate = [(barWidth * (i) + 5), 0];
+//       return "translate("+translate+")";
+//   });
 }
 
 //Maps for holding data

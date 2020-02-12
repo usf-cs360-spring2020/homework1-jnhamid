@@ -1,7 +1,21 @@
 svg{
-  background: #73fffa;
+  background: ##FFFFFF;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 rect{
-  fill: hotpink;
+  fill: #4E79A7;
+}
+text{
+  font-family: 'Titillium Web', sans-serif;
+}
+plot{
+  font-family: 'Titillium Web', sans-serif;
+
+}
+
+#charttitle{
+    font-size: 18pt;
+    font-weight: 100;
+    text-decoration: underline;
 }
