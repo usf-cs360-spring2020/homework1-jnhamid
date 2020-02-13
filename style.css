@@ -4,7 +4,7 @@ svg{
 }
 
 rect{
-  fill: #4E79A7;
+  /* fill: #4E79A7; */
 }
 text{
   font-family: 'Titillium Web', sans-serif;
@@ -12,6 +12,10 @@ text{
 plot{
   font-family: 'Titillium Web', sans-serif;
 
+}
+
+#smallbar{
+  fill: #F28E2B;
 }
 
 #charttitle{
