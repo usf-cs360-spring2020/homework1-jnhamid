@@ -82,7 +82,7 @@ var dataset = data.filter(f => f.Month)
 			.attr("fill", d => z(d.key));
 
 		var bars = svg.selectAll("g.layer").selectAll("rect")
-			.data(d => d, e => console.log(e.data.Month));
+			.data(d => d, e => e.data.Month);
       bars.exit().remove()
 
 	bars.enter().append("rect")
@@ -93,4 +93,4 @@ var dataset = data.filter(f => f.Month)
 			.attr("height", d => y(d[0]) - y(d[1]))
 
 }
-d3.csv("test2.csv").then(d => drawBar(d));
+d3.csv("StackedBar.csv").then(d => drawBar(d));
