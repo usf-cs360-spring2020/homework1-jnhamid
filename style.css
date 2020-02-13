@@ -8,18 +8,26 @@ rect{
 }
 text{
   font-family: 'Titillium Web', sans-serif;
+  font-weight: 100;
 }
 plot{
   font-family: 'Titillium Web', sans-serif;
 
 }
 
-#smallbar{
-  fill: #F28E2B;
-}
-
 #charttitle{
     font-size: 18pt;
     font-weight: 100;
     text-decoration: underline;
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+  width: 50%;
+  
 }
