@@ -31,6 +31,9 @@ function drawBar(data){
 // now we can calculate how much space we have to plot
 let bounds = svg.node().getBoundingClientRect();
 let plotWidth = bounds.width - margin.right - margin.left;
+if(plotWidth < 0){
+  plotWidth =860;
+}
 console.log(plotWidth)
 let plotHeight = bounds.height - margin.top - margin.bottom;
 // var barWidth = (plotWidth / dataset.length);

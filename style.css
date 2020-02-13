@@ -27,6 +27,11 @@ plot{
     font-family: 'Titillium Web', sans-serif;
 
 }
+#pieLegend{
+
+  font-weight: 100;
+  font-family: 'Titillium Web', sans-serif;
+}
 
 .center {
   display: block;
