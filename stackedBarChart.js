@@ -13,6 +13,8 @@ function drawBar(data){
   .attr("width", svgWidth)
   .attr("height", svgHeight);
 
+  console.log(svg)
+
 
   svg.append("text").attr("id", "charttitle")
    .attr("x",  svgWidth/3.9 )
@@ -91,6 +93,36 @@ var dataset = data.filter(f => f.Month)
 			.attr("x", d => x(d.data.Month))
 			.attr("y", d => y(d[1]))
 			.attr("height", d => y(d[0]) - y(d[1]))
+
+    var size = 20
+    var SVG = d3.select("#legend")
+    SVG.selectAll("mydots")
+      .data(keys)
+      .enter()
+      .append("rect")
+        .attr("x", 100)
+        .attr("y", function(d,i){ return 80 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("width", size)
+        .attr("height", size)
+        .attr("fill", d => z(d))
+        // .style("fill", function(d){ return z(d))};
+    SVG.selectAll("mylabels")
+    .data(keys)
+    .enter()
+    .append("text")
+      .attr("x", 100 + size*1.2)
+      .attr("y", function(d,i){ return 80 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
+      .style("fill", function(d){ return keys[d]})
+      .text(function(d){ return d})
+      .attr("text-anchor", "left")
+      .style("alignment-baseline", "middle")
+
+  SVG.append("text").attr("id","legendtitle")
+   .attr("x", 130 + size*1.2)
+   .attr("y", function(d,i){ return 70 + i*(size+5)})
+   .style("text-anchor", "middle")
+   .text("Geo Summary");
+
 
 }
 d3.csv("StackedBar.csv").then(d => drawBar(d));

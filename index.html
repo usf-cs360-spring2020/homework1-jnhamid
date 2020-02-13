@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- TODO: Change title -->
-    <title>Homework 1</title>
+    <title>Homework 1 </title>
 
     <!-- Load Bulma from CDN (consider saving it to repository instead) -->
     <!-- https://bulma.io/ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://d3js.org/d3.v5.min.js"></script>
-      <script src="StackedBarChart.js"></script>
+    <script src="StackedBarChart.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
     <!-- Load Font Awesome 5 (free) icons -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -133,8 +134,9 @@
         <p>For now this is just a demo. The buttons below do not go anywhere, but can be easily changed to link to different visualization pages.</p>
 
         <svg width = "960px", height = "500px">
+        <svg id="legend" height=300 width=450></svg>
 
-        <h4>Discussion</h4>
+        <h4>Discussion  </h4>
 
         <p>You may also need other sections, like a discussion section, per-visualization section on data wrangling, and others. Because of the extra content and code visualizations take, it might be worthwhile to break up your pages into one home page and then one page per visualization.</p>
 
@@ -142,6 +144,8 @@
 
         <p>
           <a href="https://bl.ocks.org/LemoNode/5a64865728c6059ed89388b5f83d6b67">Stacked Bar Chart Inspiration</a><br/>
+
+          <a href="https://www.d3-graph-gallery.com/graph/custom_legend.html">Legend Template</a><br/>
         </p>
 
         <p class="is-6">

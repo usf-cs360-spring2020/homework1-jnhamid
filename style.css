@@ -22,6 +22,11 @@ plot{
     font-family: 'Titillium Web', sans-serif;
 
 }
+#legendtitle{
+    font-weight: bold;
+    font-family: 'Titillium Web', sans-serif;
+
+}
 
 .center {
   display: block;
@@ -29,5 +34,5 @@ plot{
   margin-right: auto;
   padding-bottom: 5px;
   width: 50%;
-  
+
 }
