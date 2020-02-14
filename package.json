@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/usf-cs360-spring2020/homework1-jnhamid#readme",
   "dependencies": {
+    "d3-svg-legend": "^2.25.6",
     "lightbox2": "^2.11.1"
   }
 }
