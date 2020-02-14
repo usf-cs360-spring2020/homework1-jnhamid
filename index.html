@@ -11,6 +11,7 @@
     <!-- https://bulma.io/ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="node_modules/lightbox2/dist/css/lightbox.css" rel="stylesheet" />
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
@@ -128,9 +129,12 @@
 
         <h2 id="visualizations">Visualizations</h2>
 
-        <p>Ideally not everything would be on a single page like this example. Instead, you might want to put each section in its own webpage. You would need to carefully replicate the page template (with the header, navbar, and footer) and make the necessary updates. For example, you want the "About" navbar item to be considered active on an "About" web page.</p>
+        <p>Here are the examples that I made in Tableau</p>
+        <a href="stackbar.png" data-lightbox="tableau">Stacked Bar Chart</a>
+        <a href="pieChart.png" data-lightbox="tableau">Pie Chart</a>
+        <a href="heatmap2.png" data-lightbox="tableau">Heat Map</a>
 
-        <p>For now this is just a demo. The buttons below do not go anywhere, but can be easily changed to link to different visualization pages.</p>
+        <p>Here are two of those implemented into D3.js</p>
 
         <svg width = "960px", height = "500px">
         <svg id="legend" height=300 width=450></svg>
@@ -234,6 +238,8 @@
     </div>
   </footer>
   <!-- End page footer -->
+
+  <script src="node_modules/lightbox2/dist/js/lightbox-plus-jquery"></script>
 
   <!-- Mobile menu responsiveness -->
   <!-- https://bulma.io/documentation/components/navbar/ -->

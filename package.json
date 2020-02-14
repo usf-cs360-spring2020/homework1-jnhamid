@@ -1,0 +1,22 @@
+{
+  "name": "homework1-jnhamid",
+  "version": "1.0.0",
+  "description": "<https://usf-cs360-spring2020.github.io/template-bulma/>",
+  "main": "pieChart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usf-cs360-spring2020/homework1-jnhamid.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/usf-cs360-spring2020/homework1-jnhamid/issues"
+  },
+  "homepage": "https://github.com/usf-cs360-spring2020/homework1-jnhamid#readme",
+  "dependencies": {
+    "lightbox2": "^2.11.1"
+  }
+}
