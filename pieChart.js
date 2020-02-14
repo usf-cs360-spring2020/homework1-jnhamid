@@ -16,14 +16,14 @@ function drawPie(data){
     	.outerRadius(radius)
 
   var svg = d3.select("#pieChart")
-      .attr("width", width + 360)
+      .attr("width", width)
       .attr("height", height)
     .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 
   svg.append("text").attr("id", "charttitle")
-   .attr("x",  55 )
+   .attr("x",  0 )
    .attr("y", -250)
    .style("text-anchor", "middle")
    .text("Number of Passengers per Boarding Group 2017-2019");
@@ -92,9 +92,9 @@ var g=  svg
     .data(area)
     .enter()
     .append("rect")
-      .attr("x", 100)
+      .attr("x", 10)
       .style("background", "red")
-      .attr("y", function(d,i){ return 100 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
+      .attr("y", function(d,i){ return 85 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
       .attr("width", size)
       .attr("height", size)
       .style("fill", function(d){ return color(d)})
@@ -102,8 +102,8 @@ var g=  svg
     .data(area)
     .enter()
     .append("text")
-      .attr("x", 100 + size*1.2)
-      .attr("y", function(d,i){ return 100 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
+      .attr("x", 10 + size*1.2)
+      .attr("y", function(d,i){ return 87 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
       .style("fill", function(d){ return area[d]})
       .text(function(d){
         return d})
@@ -111,8 +111,8 @@ var g=  svg
       .style("alignment-baseline", "middle")
 
   SVG.append("text").attr("id","legendtitle")
-   .attr("x", 70 + size*1.2)
-   .attr("y", function(d,i){ return 90 + i*(size+5)})
+   .attr("x", -15 + size*1.2)
+   .attr("y", function(d,i){ return 83 + i*(size+5)})
    .style("text-anchor", "start")
    .text("Boarding Area");
 
